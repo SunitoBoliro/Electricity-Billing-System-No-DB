@@ -32,7 +32,8 @@ public class calculate_bill extends JFrame implements ActionListener
             }
             Object[] objects = ok.toArray();
 
-            // Printing array of objects
+
+// Printing array of objects
             len = objects.length;
             System.out.println(len);
             Scanner myReader;
