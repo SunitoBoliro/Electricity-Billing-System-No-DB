@@ -17,6 +17,7 @@ public class splash
                 Thread.sleep(10);
             }
             catch (Exception e){}
+
         }
 
 

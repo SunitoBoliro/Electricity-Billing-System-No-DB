@@ -64,6 +64,7 @@ public class LastBill extends JFrame implements ActionListener{
                         i++;
                     }
                 }
+                assert myReader != null;
                 myReader.close();
             } catch (FileNotFoundException ex) {
                 throw new RuntimeException(ex);

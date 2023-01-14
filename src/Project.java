@@ -3,31 +3,45 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Project extends JFrame implements ActionListener{
+    final Object[] cols_2(){
+        /* Second Column */
+        final JMenu user = new JMenu("User");
+        final JMenuItem u1 = new JMenuItem("Pay Bill");
+        final JMenuItem u2 = new JMenuItem("Calculate Bill");
+        final JMenuItem u3 = new JMenuItem("Last Bill");
+        user.setForeground(Color.RED);
+        final Object[] items = new Object[4];
+        items[0] = u1;
+        items[1] = u2;
+        items[2] = u3;
+        items[3] = user;
+        return items;
+    }
     Project(){
         super("Electricity Billing System");
 
         setSize(1500,800);
 
         /* Adding background image */
-        ImageIcon ic =  new ImageIcon(ClassLoader.getSystemResource("images/main1.jpg"));
-        Image i3 = ic.getImage().getScaledInstance(1420, 720,Image.SCALE_DEFAULT);
-        ImageIcon icc3 = new ImageIcon(i3);
-        JLabel l1 = new JLabel(icc3);
+        final ImageIcon ic =  new ImageIcon(ClassLoader.getSystemResource("images/main1.jpg"));
+        final Image i3 = ic.getImage().getScaledInstance(1420, 720,Image.SCALE_DEFAULT);
+        final ImageIcon icc3 = new ImageIcon(i3);
+        final JLabel l1 = new JLabel(icc3);
         add(l1);
 
         /* First Column */
-        JMenuBar mb  = new JMenuBar();
-        JMenu master = new JMenu("Master");
-        JMenuItem m1 = new JMenuItem("New Customer");
-        JMenuItem m2 = new JMenuItem("Customer Details");
-        JMenuItem m3 = new JMenuItem("Deposit Details");
+        final JMenuBar mb  = new JMenuBar();
+        final JMenu master = new JMenu("Master");
+        final JMenuItem m1 = new JMenuItem("New Customer");
+        final JMenuItem m2 = new JMenuItem("Customer Details");
+        final JMenuItem m3 = new JMenuItem("Deposit Details");
         master.setForeground(Color.BLUE);
 
 
         /* ---- Customer Details ---- */
         m1.setFont(new Font("monospaced",Font.PLAIN,12));
-        ImageIcon icon1 = new ImageIcon(ClassLoader.getSystemResource("images/icon1.jpg"));
-        Image image1 = icon1.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
+        final ImageIcon icon1 = new ImageIcon(ClassLoader.getSystemResource("images/icon1.jpg"));
+        final Image image1 = icon1.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
         m1.setIcon(new ImageIcon(image1));
         m1.setMnemonic('D');
         m1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
@@ -35,8 +49,8 @@ public class Project extends JFrame implements ActionListener{
 
         /* ---- Meter Details ---- */
         m2.setFont(new Font("monospaced",Font.PLAIN,12));
-        ImageIcon icon2 = new ImageIcon(ClassLoader.getSystemResource("images/icon2.png"));
-        Image image2 = icon2.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
+        final ImageIcon icon2 = new ImageIcon(ClassLoader.getSystemResource("images/icon2.png"));
+        final Image image2 = icon2.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
         m2.setIcon(new ImageIcon(image2));
         m2.setMnemonic('M');
         m2.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.CTRL_MASK));
@@ -44,8 +58,8 @@ public class Project extends JFrame implements ActionListener{
 
         /* ---- Deposit Details  ----- */
         m3.setFont(new Font("monospaced",Font.PLAIN,12));
-        ImageIcon icon3 = new ImageIcon(ClassLoader.getSystemResource("images/icon3.png"));
-        Image image3 = icon3.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
+        final ImageIcon icon3 = new ImageIcon(ClassLoader.getSystemResource("images/icon3.png"));
+        final Image image3 = icon3.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
         m3.setIcon(new ImageIcon(image3));
         m3.setMnemonic('N');
         m3.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
@@ -56,14 +70,14 @@ public class Project extends JFrame implements ActionListener{
         m3.addActionListener(this);
 
         // --------------------------------------------------------------------------------------------
-
-
         /* Second Column */
-        JMenu user = new JMenu("User");
-        JMenuItem u1 = new JMenuItem("Pay Bill");
-        JMenuItem u2 = new JMenuItem("Calculate Bill");
-        JMenuItem u3 = new JMenuItem("Last Bill");
-        user.setForeground(Color.RED);
+        // --------------------------------------------------------------------------------------------
+
+        Object[] items = cols_2();
+        JMenuItem u1 = (JMenuItem) items[0];
+        JMenuItem u2 = (JMenuItem) items[1];
+        JMenuItem u3 = (JMenuItem) items[2];
+        JMenu user = (JMenu) items[3];
 
         /* ---- Pay Bill ---- */
         u1.setFont(new Font("monospaced",Font.PLAIN,12));
